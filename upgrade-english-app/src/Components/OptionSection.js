@@ -5,11 +5,12 @@ import emailIcon from "../imgs/email.png";
 import facebookIcon from "../imgs/facebook.png";
 import twitterIcon from "../imgs/twitter.png";
 import GoogleLoginBtn from "./GoogleLoginBtn";
+import GoogleLogoutBtn from "./GoogleLogoutBtn";
 
-let clientId =
+const clientId =
   "901135002966-atqilg0legnfg9eer5lj9iknooouqo0l.apps.googleusercontent.com";
 
-function FormSection(props) {
+function OptionSection(props) {
   useEffect(() => {
     function start() {
       gapi.client.init({
@@ -25,7 +26,8 @@ function FormSection(props) {
       <button id="email" onClick={props.switchView}>
         <img src={emailIcon} /> <h3>Sign In With Email</h3>
       </button>
-      <GoogleLoginBtn handleLoggedState={props.handleLoggedState} />
+      <GoogleLoginBtn />
+      <GoogleLogoutBtn/>
       <button id="twitter">
         <img src={twitterIcon} /> <h3>Sign In With Twitter</h3>
       </button>
@@ -37,4 +39,4 @@ function FormSection(props) {
   );
 }
 
-export default FormSection;
+export default OptionSection;
