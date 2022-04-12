@@ -17,6 +17,7 @@ function GoogleLogoutBtn(props) {
     <GoogleLogout
       id="gmail"
       clientId={clientId}
+      
       onLogoutSuccess={onSuccess}
     />
     </>
