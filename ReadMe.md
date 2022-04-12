@@ -5,7 +5,7 @@ That way I can focus full time on doing what I love the most 🤩...
 
 [![Netflix-N-Meow](/cat.png "Netflix-N-Meow")](https://giphy.com/gifs/4fDyJqlYYMkvK)
 
-### Just Kidding passion is `writting.code === MyfavoriteThingsToDo[0]`
+### Just Kidding my passion is `writting.code === MyfavoriteThingsToDo[0]`
 ---
 ## Here's A List of Pending and Finished Task : 
 ***
