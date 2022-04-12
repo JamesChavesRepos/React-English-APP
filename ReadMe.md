@@ -13,12 +13,10 @@ That way I can focus full time on doing what I love the most 🤩...
 - [x] Start Over
 - [x] Prepare Login page Structure
 - [ ] Autheticate 
-
-          1. ~~Google~~
+          1. Google
           2. Twittwe 
           3. Facebook
           4. Email
-
 - [x] Redesign DashBoard 
 - [ ] Downloadables
 - [ ] Add DashBoard Components n Redesign 
