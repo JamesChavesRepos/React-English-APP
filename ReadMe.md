@@ -2,6 +2,6 @@
 ## Watching murder mysteries with my cat on the couch!
 ### 
 ![Netflix-N-Meow]((https://i.pinimg.com/originals/f5/d2/f2/f5d2f246bd0b188f991e3c15b3bf6c53.jpg) "Netflix-N-Meow")
-[![Netflix-N-Meow](/Imgs/Netflix-N-Meow.jpg "Netflix-N-Meow")](https://giphy.com/gifs/4fDyJqlYYMkvK)
+[![Netflix-N-Meow](/cat.png "Netflix-N-Meow")](https://giphy.com/gifs/4fDyJqlYYMkvK)
 
 
