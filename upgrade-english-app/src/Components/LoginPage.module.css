@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+*{
+  font-family: 'Merriweather', serif;
+}
+body{
+  overflow: hidden;
+  
+}
+.container {
+  width: 1100px;
+  height: 800px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 30px;
+  display: flex;
+  overflow: hidden;
+  background: linear-gradient(
+    225.12deg,
+    rgba(119, 133, 245, 0.59) 1.11%,
+    rgba(255, 255, 255, 0.74) 26.5%,
+    rgba(255, 255, 255, 0.618033) 49.42%,
+    rgba(185, 192, 250, 0.5) 74.74%
+  );
+  box-shadow: -1px 8px 5px 0px #dad1e2b2;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  flex: 0.45;
+  z-index: 2;
+}
+section.left img {
+  margin: 15%;
+}
+.left button {
+  margin-top: 6%;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 60%;
+  height: 60px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid lightgrey;
+  color: #b4b4b4;
+  background-color: white;
+  box-shadow: -1px 3px 2px 0px #dad1e2b2;
+}
+/*might change with default styles provided*/
+.left button h3 {
+  position: relative;
+  left: -30px;
+  width: 300px;
+}
+.left button img {
+  position: relative;
+  left: -20px;
+  width: 13%;
+}
+.left button:hover {
+  border: 2px solid rgba(184, 107, 184, 0.788);
+  color: rgba(184, 107, 184, 0.788);
+  width: 65%;
+}
+.right {
+  flex: 0.55;
+  position: relative;
+  z-index: 1;
+}
+.right img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 115%;
+}
+label{
+  border-radius: 8px;
+  color:#E5E5E5;
+  font-size: 20px;
+}
+section label:first-of-type{
+  margin-top: 10%;
+}
+input{
+  height: 45px;
+  width: 85%;
+  border-radius: 8px;
+  border: 2px solid #E5E5E5;
+  color:#E5E5E5;
+  outline: none;
+}
+input::placeholder{
+  color:#E5E5E5;
+}
+button.signInBtn{
+  display: unset;
+  position: relative;
+  width: 65%;
+  top: 35px;
+  border: 2px solid purple;
+  color: purple;
+  font-size: 20px;
+}
+button.signInBtn:hover{
+  color: white;
+  background-color: rgba(184, 107, 184, 0.788);
+  border: purple;
+}
+
+h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 230px !important;
+}
+@media only screen and (max-width: 1350px) {
+  .container {
+    transform: scale(0.75);
+  }
+}
+@media only screen and (max-width: 730px) {
+  .container {
+    transform: scale(0.55);
+  }
+}
+@media only screen and (max-width: 500px) {
+
+  body {
+    display: flex;
+    height: max-content;
+    overflow: unset;
+    min-width: 280px;
+  }
+  .container {
+    transform: scale(1);
+    width: 90%;
+    
+  }
+  main {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 100%;
+  }
+  section{
+    padding-bottom: 10%;
+  }
+  section img.logo {
+    width: 60%;
+    
+  }
+  section.left button{
+    height: 40px !important;
+  }
+  h3{
+    height: 10px;
+    font-size: 3vw;
+    position: absolute;
+    left: 15px;
+  }
+  button.signInBtn{
+    top: 10px;
+  }
+ span img{
+    height: 24px;
+    position: absolute;
+    left: 15px;
+  }
+}

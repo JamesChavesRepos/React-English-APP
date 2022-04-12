@@ -7,7 +7,7 @@ That way I can focus full time on doing what I love the most 🤩...
 
 ### Just Kidding my passion is `writting.code === MyfavoriteThingsToDo[0]`
 ---
-## Here's A List of Pending and Finished Task : 
+## Here's A List of Pending and Finished Task :  
 ***
 - [x] Redesign App
 - [x] Start Over
