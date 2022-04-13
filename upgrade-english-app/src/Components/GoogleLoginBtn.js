@@ -4,8 +4,10 @@ import { GoogleLogin } from "react-google-login";
 import gmailIcon from "../imgs/google.svg";
 
 const clientId = "901135002966-atqilg0legnfg9eer5lj9iknooouqo0l.apps.googleusercontent.com";
+
 const onSuccess = (res) =>{
   console.log("login success! current user : ", res.profileObj)
+  
 }
 const onFailure = (res) => {
   console.log("Failure : ", res);

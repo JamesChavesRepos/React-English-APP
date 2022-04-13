@@ -26,7 +26,7 @@ function OptionSection(props) {
       <button id="email" onClick={props.switchView}>
         <img src={emailIcon} /> <h3>Sign In With Email</h3>
       </button>
-      <GoogleLoginBtn />
+      <GoogleLoginBtn/>
       <GoogleLogoutBtn/>
       <button id="twitter">
         <img src={twitterIcon} /> <h3>Sign In With Twitter</h3>

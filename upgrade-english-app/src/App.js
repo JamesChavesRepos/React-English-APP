@@ -1,22 +1,23 @@
-import './App.css';
-import { useState } from 'react';
+import "./App.css";
+import { useState } from "react";
 
-import LoginPage from './Components/LoginPage'
-import OfficialPage from './Components/OfficialPage'
-
+import LoginPage from "./Components/LoginPage";
+import OfficialPage from "./Components/OfficialPage";
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
 
-  const [loggedIn,setLoggedIn] = useState(false);
-
-  const handleLoggedState = ()=>{
-    setLoggedIn(true)
-  }
+  const handleLoggedState = () => {
+    setLoggedIn(true);
+  };
 
   return (
     <>
-      {/* {loggedIn ? <LoginPage handleLoggedState={handleLoggedState}/> : <OfficialPage />} */}
-      <LoginPage handleLoggedState={setLoggedIn}/>
+      {!loggedIn ? (
+        <LoginPage/>
+      ) : (
+        <OfficialPage />
+      )}
     </>
   );
 }

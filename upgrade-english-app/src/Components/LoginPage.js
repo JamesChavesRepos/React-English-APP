@@ -17,7 +17,6 @@ function LoginPage(props) {
         <img className={styles.logo} src={lightLogo} />
         {!emailLogin ? (
           <OptionSection
-            handleLoggedState={props.handleLoggedState}
             switchView={switchView}
           />
         ) : (
