@@ -1,7 +1,9 @@
 import React,{useContext} from 'react'
+
 import AuthContext from "../context/auth-context";
-import bg from '../imgs/bg-2.png';
+// import bg from '../imgs/bg.svg';
 import styles from './OfficialPage.css'
+import GeneralLogoutBtn from './GeneralLogoutBtn';
 import ToggleBtn from './ToggleBtn';
 import Dashboard from './Dashboard';
 import SignUpForm from './SignUpForm';
@@ -13,13 +15,15 @@ function OfficialPage() {
   return (
     <>
     <main className={styles.mainContainer} >
-    <img src={bg} />
+    <img id='test' className={styles.bgImg} src={bg} />
     <h1>{ctx.name}</h1>
-      <ToggleBtn/>
+      <GeneralLogoutBtn/>
+      {/* <ToggleBtn/>
       <Dashboard/>
       <SignUpForm/>
       <Admin/>
-      <LogoutBtn/>
+      <LogoutBtn/> */}
+      
     </main>
     </>
   )
