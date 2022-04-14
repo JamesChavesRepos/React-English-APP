@@ -15,7 +15,7 @@ function OfficialPage() {
   return (
     <>
     <main className={styles.mainContainer} >
-    <img id='test' className={styles.bgImg} src={bg} />
+  
     <h1>{ctx.name}</h1>
       <GeneralLogoutBtn/>
       {/* <ToggleBtn/>

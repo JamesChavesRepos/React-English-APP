@@ -5,7 +5,7 @@ import emailIcon from "../imgs/email.png";
 import facebookIcon from "../imgs/facebook.png";
 import twitterIcon from "../imgs/twitter.png";
 import GoogleLoginBtn from "./GoogleLoginBtn";
-import GoogleLogoutBtn from "./GoogleLogoutBtn";
+import GoogleLogoutBtn from "./GeneralLogoutBtn";
 
 const clientId =
   "901135002966-atqilg0legnfg9eer5lj9iknooouqo0l.apps.googleusercontent.com";
@@ -13,7 +13,7 @@ const clientId =
 function OptionSection(props) {
   useEffect(() => {
     function start() {
-      gapi.client.init({
+      gapi.auth2.init({
         clientId: clientId,
         scope: "",
       });
@@ -27,7 +27,6 @@ function OptionSection(props) {
         <img src={emailIcon} /> <h3>Sign In With Email</h3>
       </button>
       <GoogleLoginBtn/>
-      <GoogleLogoutBtn/>
       <button id="twitter">
         <img src={twitterIcon} /> <h3>Sign In With Twitter</h3>
       </button>
