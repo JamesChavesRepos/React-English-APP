@@ -22,17 +22,12 @@ function App() {
 
   return (
     <>
-    <img src={left}/>
-    <img src={bottomLeft}/>
-    <img src={topRight}/>
-    <img src={bottomRight}/>
       <AuthContext.Provider value={{
         onLogin : loginHandler,
         userData: {},
       }}>
         {!isLoggedIn ? <OfficialPage/> : <LoginPage />}
       </AuthContext.Provider>
-      <footer>Powered By<img src={sincoLogo}/> </footer>
     </>
   );
 }
