@@ -3,21 +3,23 @@ import { useState } from "react";
 
 import LoginPage from "./Components/LoginPage";
 import OfficialPage from "./Components/OfficialPage";
+import AuthContext from "./context/auth-context";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleLoggedState = () => {
-    setLoggedIn(true);
+  const loginHandler = () => {
+    setIsLoggedIn(true);
   };
 
   return (
     <>
-      {!loggedIn ? (
-        <LoginPage/>
-      ) : (
-        <OfficialPage />
-      )}
+      <AuthContext.Provider value={{
+        onLogin : loginHandler,
+        userData: {},
+      }}>
+        {isLoggedIn ? <OfficialPage/> : <LoginPage />}
+      </AuthContext.Provider>
     </>
   );
 }

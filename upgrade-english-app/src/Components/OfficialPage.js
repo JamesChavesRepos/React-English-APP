@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React,{useContext} from 'react'
+import AuthContext from "../context/auth-context";
 import bg from '../imgs/bg-2.png';
 import styles from './OfficialPage.css'
 import ToggleBtn from './ToggleBtn';
@@ -9,10 +9,12 @@ import Admin from './Admin';
 import LogoutBtn from './LogoutBtn';
 
 function OfficialPage() {
+  let ctx = useContext(AuthContext);
   return (
     <>
-    <img src={bg}/>
-    <main className={styles.mainContainer}>
+    <main className={styles.mainContainer} >
+    <img src={bg} />
+    <h1>{ctx.name}</h1>
       <ToggleBtn/>
       <Dashboard/>
       <SignUpForm/>

@@ -1,8 +1,3 @@
-/* 
-img{
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 101%;
-    height: 101vh;
-} */
+.mainContainer{
+    border: 2px solid red;
+}
