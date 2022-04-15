@@ -1,3 +1,114 @@
-.mainContainer{
-    border: 2px solid red;
+img.bgImg{
+  position: absolute;
+  z-index: -1;
 }
+img.bgImg.left{
+
+}
+img#left {
+    
+    top: 1%;
+    left: -4%;
+    animation: spin 50s infinite;
+  }
+img#bottomLeft {
+    
+    bottom: -17%;
+    left: -2.5%;
+    animation: spin 50s infinite;
+  }
+  img#topRight {
+    
+    top: 5%;
+    right: 0;
+    animation: spin 15s infinite;
+  }
+  img#bottomRight {
+    
+    bottom: -2%;
+    right: 0;
+    animation: float 4s infinite;
+  }
+  h5{
+    width: 100px;
+    font-weight: 500;
+    font-family: 'Inika', serif;
+    color: rgb(170, 170, 170);
+  }
+  button#generalLogoutBtn{
+      position: absolute;
+      right: 0px;
+  }
+  footer img#sLogo {
+    width: 7vw;
+    height: auto;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    bottom: 0px;
+  }
+  @keyframes spin {
+    25% {
+      transform: rotate(2deg);
+    }
+    40% {
+      transform: rotate(40deg);
+    }
+    60%{
+      transform: rotate(60deg);
+    }
+    70%{
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes float {
+    33% {
+      transform: rotate(4deg);
+    }
+    66%{
+      transform: rotate(0deg);
+    }
+    99% {
+      transform: rotate(4deg);
+    }
+  }
+  @media screen and (max-width: 600px) {
+    footer {
+      z-index: 3;
+      bottom: -15px;
+      flex-direction: column;
+    }
+    h5{
+      width: unset;
+    }
+    footer img {
+      width: 13vw;
+      height: auto;
+    }
+    img#bottomLeft{
+      left: -120px;
+    }
+    img#left{
+      top: -10px;
+      left: -150px;
+    }
+    img#topRight{
+      top: 20px;
+      right: -10px;
+    }
+    img#bottomRight{
+      right: -15px;
+     bottom: -45px;
+    }
+    button#generalLogoutBtn{
+      
+    }
+  }

@@ -1,40 +1,34 @@
-import React,{useContext} from 'react'
-
+import React, { useContext } from "react";
 import AuthContext from "../context/auth-context";
-// import bg from '../imgs/bg.svg';
-import styles from './OfficialPage.css'
-import GeneralLogoutBtn from './GeneralLogoutBtn';
-import ToggleBtn from './ToggleBtn';
-import Dashboard from './Dashboard';
-import SignUpForm from './SignUpForm';
-import Admin from './Admin';
-import LogoutBtn from './LogoutBtn';
-import left from '../imgs/left.svg';
-import bottomLeft from '../imgs/bottomLeft.svg';
-import topRight from '../imgs/topRight.svg';
-import bottomRight from '../imgs/bottomRight.svg';
+
+import styles from "./OfficialPage.css";
+import GeneralLogoutBtn from "./GeneralLogoutBtn";
+import left from "../imgs/left.svg";
+import bottomLeft from "../imgs/bottomLeft.svg";
+import topRight from "../imgs/topRight.svg";
+import bottomRight from "../imgs/bottomRight.svg";
+import sincoLogo from "../imgs/logo-sinco.svg";
+import MainView from "./MainView";
 
 function OfficialPage() {
-  let ctx = useContext(AuthContext);
+  let name = useContext(AuthContext);
+  console.log(name);
   return (
     <>
-    <main className={styles.mainContainer} >
-    <h1>{ctx.name}</h1>
-      <GeneralLogoutBtn/>
-
-<img src={left} id="left"/>
-<img src={bottomLeft} id="bottomLeft"/>
-<img src={topRight} id="topRight"/>
-<img src={bottomRight} id="bottomRight"/>
-      {/* <ToggleBtn/>
-      <Dashboard/>
-      <SignUpForm/>
-      <Admin/>
-      <LogoutBtn/> */}
-      
-    </main>
+      <main id="container">
+        <img className="bgImg left" src={left} id="left" />
+        <img className="bgImg left" src={bottomLeft} id="bottomLeft" />
+        <img className="bgImg right" src={topRight} id="topRight" />
+        <img className="bgImg right" src={bottomRight} id="bottomRight" />
+        <MainView/>
+        <GeneralLogoutBtn />
+        <footer>
+          <h5>Powered By</h5>
+          <img id="sLogo" src={sincoLogo} />{" "}
+        </footer>
+      </main>
     </>
-  )
+  );
 }
 
-export default OfficialPage
+export default OfficialPage;
