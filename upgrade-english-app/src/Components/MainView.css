@@ -47,6 +47,7 @@ section.mainView {
   background-color: white;
   box-shadow: 1px 7px 7px #7979797e;
 }
+
 @media screen and (min-width: 1110px) {
   .mainContainer {
     height: 500px;
@@ -62,19 +63,16 @@ section.mainView {
 @media screen and (max-width: 1000px) {
   .mainContainer {
     width: 700px;
-    border: 2px solid green;
   }
 }
 @media screen and (max-width: 750px) {
   .mainContainer {
     width: 600px;
-    border: 2px solid rgb(128, 0, 109);
   }
 }
 @media screen and (max-width: 600px) {
   .mainContainer {
     height: 600px;
     width: 375px;
-    border: 2px solidgreen;
   }
 }

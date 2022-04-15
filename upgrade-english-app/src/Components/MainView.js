@@ -10,12 +10,19 @@ import adminIcon from '../imgs/adminIcon.svg';
 
 function MainView() {
     const [view,setView] = useState('mainView');
+
+    const swap = (e)=>{
+        console.log(e.target)
+        console.log(e.target.id)
+        e.target.setSrc
+    }
+
   return (
         <main className='mainContainer'>
             <ul>
-                <li><img src={dashIcon}/></li>
-                <li><img src={formIcon}/></li>
-                <li><img src={adminIcon}/></li>
+                <li  id='dash' onClick={swap}><img src={dashIcon}/></li>
+                <li id='form' onClick={swap}><img src={formIcon}/></li>
+                <li id='admin' onClick={swap}><img src={adminIcon}/></li>
             </ul>
             <section className='mainView'>
                {view === 'dashboard' && <Dashboard/>}

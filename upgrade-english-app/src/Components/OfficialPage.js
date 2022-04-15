@@ -16,10 +16,10 @@ function OfficialPage() {
   return (
     <>
       <main id="container">
-        <img className="bgImg left" src={left} id="left" />
-        <img className="bgImg left" src={bottomLeft} id="bottomLeft" />
-        <img className="bgImg right" src={topRight} id="topRight" />
-        <img className="bgImg right" src={bottomRight} id="bottomRight" />
+        <img className="bgImg" src={left} id="left" />
+        <img className="bgImg" src={bottomLeft} id="bottomLeft" />
+        <img className="bgImg" src={topRight} id="topRight" />
+        <img className="bgImg" src={bottomRight} id="bottomRight" />
         <MainView/>
         <GeneralLogoutBtn />
         <footer>

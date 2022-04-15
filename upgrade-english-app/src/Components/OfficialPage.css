@@ -1,114 +1,117 @@
-img.bgImg{
+img.bgImg {
   position: absolute;
   z-index: -1;
 }
-img.bgImg.left{
-
+img.bgImg.left {
+  left: -10%;
 }
 img#left {
-    
-    top: 1%;
-    left: -4%;
-    animation: spin 50s infinite;
-  }
+  top: 1%;
+  left: -10%;
+  animation: spin 120s infinite;
+}
 img#bottomLeft {
-    
-    bottom: -17%;
-    left: -2.5%;
-    animation: spin 50s infinite;
+  left: 0;
+  bottom: -25%;
+  animation: spin 80s infinite;
+}
+img#topRight {
+  top: 5%;
+  right: 0;
+  animation: spin 70s infinite;
+}
+img#bottomRight {
+  bottom: -2%;
+  right: 0;
+  animation: spin 60s infinite;
+}
+h5 {
+  width: 100px;
+  font-weight: 500;
+  font-family: "Inika", serif;
+  color: rgb(170, 170, 170);
+}
+button#generalLogoutBtn {
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  border: 2px solid #381B63;
+  color: #381B63;
+}
+button:hover {
+  border: 2px solid rgba(255, 255, 255, 0.788);
+  color: rgba(255, 255, 255, 0.788);
+  background-color: #381B63;
+}
+footer img#sLogo {
+  width: 7vw;
+  height: auto;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  bottom: 0px;
+}
+@keyframes spin {
+  25% {
+    transform: rotate(2deg);
   }
-  img#topRight {
-    
-    top: 5%;
-    right: 0;
-    animation: spin 15s infinite;
+  40% {
+    transform: rotate(40deg);
   }
-  img#bottomRight {
-    
-    bottom: -2%;
-    right: 0;
-    animation: float 4s infinite;
+  60% {
+    transform: rotate(60deg);
   }
-  h5{
-    width: 100px;
-    font-weight: 500;
-    font-family: 'Inika', serif;
-    color: rgb(170, 170, 170);
+  70% {
+    transform: rotate(90deg);
   }
-  button#generalLogoutBtn{
-      position: absolute;
-      right: 0px;
+  100% {
+    transform: rotate(360deg);
   }
-  footer img#sLogo {
-    width: 7vw;
+}
+@keyframes grow {
+  33% {
+    transform: rotate(5deg);
+    transform: scale(1.2);
+  }
+  66% {
+    transform: scale(1);
+    transform: rotate(30deg);
+  }
+  99% {
+    transform: scale(1.3);
+    transform: rotate(60deg);
+  }
+}
+@media screen and (max-width: 600px) {
+  footer {
+    z-index: 3;
+    bottom: -15px;
+    flex-direction: column;
+  }
+  h5 {
+    width: unset;
+  }
+  footer img {
+    width: 13vw;
     height: auto;
   }
-  footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    bottom: 0px;
+  img#bottomLeft {
+    left: -120px;
   }
-  @keyframes spin {
-    25% {
-      transform: rotate(2deg);
-    }
-    40% {
-      transform: rotate(40deg);
-    }
-    60%{
-      transform: rotate(60deg);
-    }
-    70%{
-      transform: rotate(90deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  img#left {
+    top: -10px;
+    left: -150px;
   }
-  
-  @keyframes float {
-    33% {
-      transform: rotate(4deg);
-    }
-    66%{
-      transform: rotate(0deg);
-    }
-    99% {
-      transform: rotate(4deg);
-    }
+  img#topRight {
+    top: 20px;
+    right: -10px;
   }
-  @media screen and (max-width: 600px) {
-    footer {
-      z-index: 3;
-      bottom: -15px;
-      flex-direction: column;
-    }
-    h5{
-      width: unset;
-    }
-    footer img {
-      width: 13vw;
-      height: auto;
-    }
-    img#bottomLeft{
-      left: -120px;
-    }
-    img#left{
-      top: -10px;
-      left: -150px;
-    }
-    img#topRight{
-      top: 20px;
-      right: -10px;
-    }
-    img#bottomRight{
-      right: -15px;
-     bottom: -45px;
-    }
-    button#generalLogoutBtn{
-      
-    }
+  img#bottomRight {
+    right: -15px;
+    bottom: -45px;
   }
+}
