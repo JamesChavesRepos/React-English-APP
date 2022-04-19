@@ -1,16 +1,14 @@
 import React, { useContext } from "react";
 import { GoogleLogin } from "react-google-login";
-import { credentials } from "../context/auth-context";
 
 const clientId =
   "901135002966-atqilg0legnfg9eer5lj9iknooouqo0l.apps.googleusercontent.com";
 
 function GoogleLoginBtn() {
-  console.log(credentials)
+
   const onSuccess = (res) => {
     console.log(res)
-    credentials.accessToken = JSON.stringify(res.accessToken);
-    credentials.name = JSON.stringify(res.profileObj.name);
+
   };
 
   const onFailure = (res) => console.log("Failure : ", res);

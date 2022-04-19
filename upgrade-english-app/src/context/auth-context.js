@@ -4,17 +4,13 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
+
 import { auth } from "../firebase";
 
 export const authContext = createContext();
-
-export const credentials = {
-    name: "",
-    onLogin : [{},()=>{}],
-    accessToken: "",
-    userData: {},
-}
 
 export const useAuth = () => {
   const context = useContext(authContext);
@@ -23,6 +19,9 @@ export const useAuth = () => {
 };
 
 export function AuthProvider({ children }) {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const [user, setUser] = useState("");
 
   const [loading, setLoading] = useState(true);
@@ -35,18 +34,22 @@ export function AuthProvider({ children }) {
 
   const logout = () => signOut(auth);
 
+  const loginWithGoogle = () => {
+    const googleProvider = new GoogleAuthProvider();
+    signInWithPopup(auth,googleProvider)
+  }
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      console.log(currentUser)
       setLoading(false);
     });
   }, []);
 
   return (
-    <authContext.Provider value={{ signUp, login, user, logout, loading }}>
+    <authContext.Provider value={{ signUp, login, user, logout, loading, loginWithGoogle }}>
       {children}
     </authContext.Provider>
   );
 }
 export default AuthProvider;
-
