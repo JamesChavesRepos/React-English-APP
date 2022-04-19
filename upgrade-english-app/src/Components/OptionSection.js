@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { gapi } from "gapi-script";
 
 import emailIcon from "../imgs/email.png";
+import gmailIcon from "../imgs/google.svg"
 import facebookIcon from "../imgs/facebook.png";
 import twitterIcon from "../imgs/twitter.png";
 import GoogleLoginBtn from "./GoogleLoginBtn";
@@ -24,9 +25,13 @@ function OptionSection(props) {
   return (
     <>
       <button id="email" onClick={props.switchView}>
-        <img src={emailIcon} /> <h3>Sign In With Email</h3>
+        <img id="email" src={emailIcon} />{" "}
+        <h3 id="email">Sign In With Email</h3>
       </button>
-      <GoogleLoginBtn/>
+
+      <button onClick={handleGoogleSignin}  id="gmail">
+        <img src={gmailIcon} /> <h3>Sign In With google</h3>
+      </button>
       <button id="twitter">
         <img src={twitterIcon} /> <h3>Sign In With Twitter</h3>
       </button>
@@ -34,6 +39,8 @@ function OptionSection(props) {
       <button id="facebook">
         <img src={facebookIcon} /> <h3>Sign In With Facebook</h3>
       </button>
+
+      <span onClick={props.switchView} id="register">Register</span>
     </>
   );
 }

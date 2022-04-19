@@ -4,11 +4,15 @@ import lightLogo from "../imgs/lightLogo.png";
 import loginBg from "../imgs/loginBg.png";
 import OptionSection from "./OptionSection";
 import styles from "./LoginPage.module.css";
-import EmailLogin from "./EmailLogin";
+import EmailHandler from "./EmailHandler"
 
-function LoginPage(props) {
+function LoginPage() {
   const [emailLogin, setEmailLogin] = useState(false);
-  const switchView = () => {
+  const [method, setMethod] = useState('');
+
+  const switchView = ({target}) => {
+    console.log(target.id)
+    setMethod(target.id)
     setEmailLogin(true);
   };
   return (
@@ -16,11 +20,9 @@ function LoginPage(props) {
       <section id="form" className={styles.left}>
         <img className={styles.logo} src={lightLogo} />
         {!emailLogin ? (
-          <OptionSection
-            switchView={switchView}
-          />
+          <OptionSection switchView={switchView} />
         ) : (
-          <EmailLogin handleLoggedState={props.handleLoggedState} />
+          <EmailHandler method={method}/>
         )}
       </section>
       <section className={styles.right}>

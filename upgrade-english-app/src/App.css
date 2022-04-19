@@ -11,4 +11,13 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+span#register{
+  color: rgba(184, 107, 184, 0.788);;
+  font-size: smaller;
+  margin-top: 7%;
+  cursor: pointer;
+}
+span#register:hover{
+  color: purple;
+  font-size: 15px;
+}

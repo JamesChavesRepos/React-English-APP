@@ -14,7 +14,6 @@ function MainView() {
     const swap = (e)=>{
         console.log(e.target)
         console.log(e.target.id)
-        e.target.setSrc
     }
 
   return (

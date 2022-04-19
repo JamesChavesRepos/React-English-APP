@@ -51,22 +51,26 @@ section.left img {
   color: #b4b4b4;
   background-color: white;
   box-shadow: -1px 3px 2px 0px #dad1e2b2;
+  z-index: 10;
 }
 /*might change with default styles provided*/
 .left button h3 {
   position: relative;
   left: -30px;
   width: 300px;
+  z-index: -20;
 }
 .left button img {
   position: relative;
   left: -20px;
   width: 13%;
+  z-index: -20;
 }
 .left button:hover {
-  border: 2px solid rgba(184, 107, 184, 0.788);
+  
+  border: 3px solid rgba(184, 107, 184, 0.788);
   color: rgba(184, 107, 184, 0.788);
-  width: 65%;
+  background: white;
 }
 .right {
   flex: 0.55;
@@ -83,6 +87,7 @@ label{
   border-radius: 8px;
   color:#E5E5E5;
   font-size: 20px;
+  color: rgba(184, 107, 184, 0.788);;
 }
 section label:first-of-type{
   margin-top: 10%;
@@ -94,6 +99,8 @@ input{
   border: 2px solid #E5E5E5;
   color:#E5E5E5;
   outline: none;
+  color: rgba(184, 107, 184, 0.788);
+  padding-left: 25px;
 }
 input::placeholder{
   color:#E5E5E5;
@@ -110,15 +117,15 @@ button.signInBtn{
 button.signInBtn:hover{
   color: white;
   background-color: rgba(184, 107, 184, 0.788);
-  border: purple;
+  border: white;
 }
-
 h3{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 230px !important;
 }
+
 @media only screen and (max-width: 1350px) {
   .container {
     transform: scale(0.75);
