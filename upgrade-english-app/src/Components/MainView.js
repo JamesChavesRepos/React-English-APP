@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import styles from './MainView.css'
+import styles from './MainView.module.css'
 import Dashboard from './Dashboard'
 import SignUpForm from './SignUpForm'
 import Admin from './Admin'
@@ -17,13 +17,13 @@ function MainView() {
     }
 
   return (
-        <main className='mainContainer'>
+        <main className={styles.mainContainer}>
             <ul>
                 <li  id='dash' onClick={swap}><img src={dashIcon}/></li>
                 <li id='form' onClick={swap}><img src={formIcon}/></li>
                 <li id='admin' onClick={swap}><img src={adminIcon}/></li>
             </ul>
-            <section className='mainView'>
+            <section className={styles.mainView}>
                {view === 'dashboard' && <Dashboard/>}
                {view === 'sign up form' && <SignUpForm/>}
                {view === 'admin' && <Admin/>}

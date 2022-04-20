@@ -8,10 +8,9 @@ import {useAuth} from "./context/auth-context";
 function App() {
 
   const {isLoggedIn} = useAuth()
-
   return (
     <>
-        {isLoggedIn ? <OfficialPage /> : <LoginPage/>}
+        {!isLoggedIn ? <LoginPage/> : <OfficialPage/>}
     </>
   );
 }

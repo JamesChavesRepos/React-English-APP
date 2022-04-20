@@ -1,3 +1,7 @@
+body{
+  width: 100%;
+  height: 100vh;
+}
 img.bgImg {
   position: absolute;
   z-index: -1;
@@ -5,22 +9,22 @@ img.bgImg {
 img.bgImg.left {
   left: -10%;
 }
-img#left {
+img.bgImg.left {
   top: 1%;
   left: -10%;
   animation: spin 120s infinite;
 }
-img#bottomLeft {
+img.bgImg.bottomLeft {
   left: 0;
   bottom: -25%;
   animation: spin 80s infinite;
 }
-img#topRight {
+img.bgImg.topRight {
   top: 5%;
   right: 0;
   animation: spin 70s infinite;
 }
-img#bottomRight {
+img.bgImg.bottomRight {
   bottom: -2%;
   right: 0;
   animation: spin 60s infinite;

@@ -19,7 +19,7 @@ export const useAuth = () => {
 };
 
 export function AuthProvider({ children }) {
-
+  
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [user, setUser] = useState("");
@@ -32,22 +32,35 @@ export function AuthProvider({ children }) {
   const login = (email, password) =>
     signInWithEmailAndPassword(auth, email, password);
 
-  const logout = () => signOut(auth);
+  const logout = () => {
+    signOut(auth);
+    window.location.reload();
+  };
 
   const loginWithGoogle = () => {
     const googleProvider = new GoogleAuthProvider();
-    signInWithPopup(auth,googleProvider)
-  }
+    signInWithPopup(auth, googleProvider);
+  };
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log(currentUser)
+      currentUser && setIsLoggedIn(true);
       setLoading(false);
     });
   }, []);
 
   return (
-    <authContext.Provider value={{ signUp, login, user, logout, loading, loginWithGoogle }}>
+    <authContext.Provider
+      value={{
+        signUp,
+        login,
+        user,
+        logout,
+        loading,
+        loginWithGoogle,
+        isLoggedIn,
+      }}
+    >
       {children}
     </authContext.Provider>
   );

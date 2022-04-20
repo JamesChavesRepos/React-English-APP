@@ -7,22 +7,28 @@ import styles from "./LoginPage.module.css";
 import EmailHandler from "./EmailHandler"
 
 function LoginPage() {
+  
   const [emailLogin, setEmailLogin] = useState(false);
   const [method, setMethod] = useState('');
 
-  const switchView = ({target}) => {
+  const emailView = ({target}) => {
     console.log(target.id)
     setMethod(target.id)
     setEmailLogin(true);
   };
+
+  const goBack = ()=>{
+    console.log('go back')
+    setEmailLogin(false)
+  }
   return (
     <main className={styles.container}>
       <section id="form" className={styles.left}>
         <img className={styles.logo} src={lightLogo} />
         {!emailLogin ? (
-          <OptionSection switchView={switchView} />
+          <OptionSection goBack={goBack} emailView={emailView} />
         ) : (
-          <EmailHandler method={method}/>
+          <EmailHandler goBack={goBack} method={method}/>
         )}
       </section>
       <section className={styles.right}>

@@ -105,19 +105,29 @@ input{
 input::placeholder{
   color:#E5E5E5;
 }
+input:focus{
+  border: 2px solid purple;
+  color: purple;
+}
+div.btnContainer{
+  display: flex;
+  width: 80%;
+}
 button.signInBtn{
   display: unset;
   position: relative;
-  width: 65%;
+  flex: 1;
   top: 35px;
-  border: 2px solid purple;
-  color: purple;
+  border: 2px solid rgba(184, 107, 184, 0.788);
+  color: rgba(184, 107, 184, 0.788);
   font-size: 20px;
+  margin: 10px;
+  transition: 0.5s;
 }
 button.signInBtn:hover{
   color: white;
-  background-color: rgba(184, 107, 184, 0.788);
-  border: white;
+  border: 2px solid purple;
+  color: purple;
 }
 h3{
   display: flex;
