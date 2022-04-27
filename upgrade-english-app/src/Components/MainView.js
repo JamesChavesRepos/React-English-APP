@@ -7,25 +7,27 @@ import Admin from './Admin'
 import dashIcon from '../imgs/dashIcon.svg';
 import formIcon from '../imgs/formIcon.svg';
 import adminIcon from '../imgs/adminIcon.svg';
-
+import dashIconClicked from '../imgs/dashIconClicked.svg';
+import formIconClicked from '../imgs/formIconClicked.svg';
+import adminIconClicked from '../imgs/adminIconClicked.svg';
 function MainView() {
-    const [view,setView] = useState('mainView');
+ 
+    const [view,setView] = useState('main');
 
-    const swap = (e)=>{
-        console.log(e.target)
-        console.log(e.target.id)
+    const swap = ({target})=>{
+        setView(target.id)
     }
 
   return (
         <main className={styles.mainContainer}>
             <ul>
-                <li  id='dash' onClick={swap}><img src={dashIcon}/></li>
-                <li id='form' onClick={swap}><img src={formIcon}/></li>
-                <li id='admin' onClick={swap}><img src={adminIcon}/></li>
+                <li  id='dash' onClick={swap}><img src={view != 'dash' ? dashIcon : dashIconClicked}/></li>
+                <li id='form' onClick={swap}><img src={view != 'form' ? formIcon : formIconClicked}/></li>
+                <li id='admin' onClick={swap}><img src={view != 'admin' ? adminIcon : adminIconClicked}/></li>
             </ul>
             <section className={styles.mainView}>
-               {view === 'dashboard' && <Dashboard/>}
-               {view === 'sign up form' && <SignUpForm/>}
+               {view === 'dash' && <Dashboard/>}
+               {view === 'form' && <SignUpForm/>}
                {view === 'admin' && <Admin/>}
             </section>
         </main>

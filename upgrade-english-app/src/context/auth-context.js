@@ -7,7 +7,6 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-
 import { auth } from "../firebase";
 
 export const authContext = createContext();
@@ -19,11 +18,10 @@ export const useAuth = () => {
 };
 
 export function AuthProvider({ children }) {
-  
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [user, setUser] = useState("");
-
+  console.log(user.displayName);
   const [loading, setLoading] = useState(true);
 
   const signUp = (email, password) =>
@@ -43,6 +41,7 @@ export function AuthProvider({ children }) {
   };
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
+      console.log(currentUser.displayName);
       setUser(currentUser);
       currentUser && setIsLoggedIn(true);
       setLoading(false);
