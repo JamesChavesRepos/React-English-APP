@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "Rajdhani";
+  src: local("Rosarivo"),
+    url("https://fonts.googleapis.com/css2?family=Rosarivo&display=swap")
+      format("truetype");
+}
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+
+* {
+  font-family: Rosarivo;
+}
+article {
+  display: flex;
+}
+article div {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+article div img.formImg {
+  height: 100%;
+  z-index: 0;
+}
+form {
+  background: linear-gradient(
+    180deg,
+    #4b1aa7 2.34%,
+    rgba(184, 146, 255, 0) 100%
+  );
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: first baseline;
+  align-items: center;
+  position: relative;
+  right: 0;
+  border-radius: 0px 10px 0 0;
+  height: 100%;
+}
+form img.lightLogo {
+  width: 50%;
+  margin-top: 20px;
+}
+form label {
+  margin: 0 !important;
+  font-size: 15px;
+  color: white;
+}
+form input {
+  margin: 5px 0 7px 0;
+  width: 60%;
+  border-radius: 3px;
+  font-size: 15px;
+  border: 0.11 solid rgba(255, 255, 255, 0.801);
+  height: 20px;
+  color: #082564;
+  font-weight: bold;
+  background-color: white;
+}
+form input:focus {
+  background: linear-gradient(rgb(0, 0, 156), rgb(44, 4, 226)) center bottom 2px /
+    calc(100% - 10px) 0.5px no-repeat;
+  background-color: white;
+}
+form input[data-val="invalid"]{
+  border: 2px solid red;
+  background-image: url('../imgs/invalid.svg') !important; 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+form input[data-val="valid"]{
+  border: 2px solid green;
+  background-image: url('../imgs/valid.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+@media screen and (max-width: 1000px) {
+  
+}
+@media screen and (max-width: 750px) {
+    article div img.formImg {
+        height: 80%;
+        z-index: 0;
+      }
+}
+

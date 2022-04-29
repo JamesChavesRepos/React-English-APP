@@ -26,12 +26,11 @@ li {
   align-items: center;
   justify-content: center;
 }
-li img{
-    width:50%;
-    height: auto;
-    pointer-events: none;
-    
-  }
+li img {
+  width: 50%;
+  height: auto;
+  pointer-events: none;
+}
 li:hover {
   transition: 20s ease-in-out;
   position: relative;
@@ -41,6 +40,7 @@ li:hover {
 }
 section.mainView {
   position: absolute;
+  display: flex;
   top: 0;
   right: 0;
   height: 95%;
@@ -49,7 +49,6 @@ section.mainView {
   background-color: white;
   box-shadow: 1px 7px 7px #7979797e;
 }
-
 @media screen and (min-width: 1110px) {
   .mainContainer {
     height: 500px;

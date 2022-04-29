@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import lightLogo from "../imgs/lightLogo.png";
+import darkLogo from "../imgs/darkLogo.png";
 import loginBg from "../imgs/loginBg.png";
 import OptionSection from "./OptionSection";
 import styles from "./LoginPage.module.css";
@@ -24,7 +24,7 @@ function LoginPage() {
   return (
     <main className={styles.container}>
       <section id="form" className={styles.left}>
-        <img className={styles.logo} src={lightLogo} />
+        <img className={styles.logo} src={darkLogo} />
         {!emailLogin ? (
           <OptionSection goBack={goBack} emailView={emailView} />
         ) : (

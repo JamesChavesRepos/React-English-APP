@@ -1,38 +1,55 @@
-import React from 'react'
+import React from "react";
 
-export const signUpForm = (props) => {
+import styles from "./signUpFornm.module.css";
+import formBg from "../imgs/formBg.svg";
+import lightLogo from "../imgs/lightLogo.svg";
+import DatePicker from "./DatePicker";
 
-  const inputValHandler = ()=>{
-    console.log('val inputs here')
-  }
+export const signUpForm = () => {
+  let timeOut = null;
+  const inputVal = {
+    fName: /^[a-z ,.'-]+$/i,
+    pNumber: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
+    email:
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    // searchEmail: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+  };
+  const dateValHandler = () => {
+    console.log("date changed");
+  };
+  const inputValHandler = ({target}) => {
+    clearTimeout(timeOut);
+    if (inputVal[target.name].test(target.value)) {
+        timeOut = setTimeout(function () {
+            console.log('Input Value: '+ target.value + " is valid");
+            target.dataset.val = "valid"
+        }, 500);
+    } else {
+        timeOut = setTimeout(function () {
+            console.log('Input Value: '+ target.value + " is  NOT valid");
+            target.dataset.val = "invalid"
+        }, 500);
+    }
+  };
 
   return (
-      
-      <main className={'dark'}>
-         
-          <form action="mailto:sb@gmail.com">
-        
-              <label  htmlFor="fName">Full Name</label>
-              <input name="fName" onChange={props.inputValHandler}></input>
-              <label htmlFor="pNumber">Phone Number</label>
-              <input name="pNumber" onChange={props.inputValHandler}></input>
-              <label htmlFor="email">Email Address</label>
-              <input name="email" onChange={props.inputValHandler}></input>
-              <aside >
-                  <div>
-                      <label htmlFor="pCode">Promo Code</label><br/>
-                      <input type="password" name="pCode" onChange={inputValHandler}></input>
-                  </div>
-                  <div>
-                      <label htmlFor="timeDate">Time and Date</label><br/>
-                      <input  name='timeDate' type='date' id="timeDate" onChange={inputValHandler}></input>
-                  </div>
-              </aside>
-              <br />
-              <button type="submit">Schedule Appointment</button>
-          </form>
-          <footer></footer>
-      </main>
-  )
-}
-export default signUpForm
+    <article>
+      <div>
+        <img className={styles.formImg} src={formBg} />
+      </div>
+      <form action="mailto:sb@gmail.com">
+        <img className={styles.lightLogo} src={lightLogo} />
+        <label htmlFor="fName">Full Name</label>
+        <input name="fName" onKeyUp={inputValHandler}></input>
+        <label htmlFor="pNumber">Phone Number</label>
+        <input name="pNumber" onKeyUp={inputValHandler}></input>
+        <label htmlFor="email">Email Address</label>
+        <input name="email" onKeyUp={inputValHandler}></input>
+        <label htmlFor="timeDate">Time & Date</label>
+        <DatePicker/>
+        <button type="submit">Schedule Appointment</button>
+      </form>
+    </article>
+  );
+};
+export default signUpForm;
