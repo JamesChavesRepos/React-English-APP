@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuth } from "../context/auth-context";
+import { useAuth } from "../../context/auth-context";
 import styles from "./LoginPage.module.css";
 
 function EmailHandler(props) {

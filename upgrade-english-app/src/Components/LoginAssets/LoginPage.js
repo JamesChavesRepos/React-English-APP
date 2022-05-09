@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import darkLogo from "../imgs/darkLogo.png";
-import loginBg from "../imgs/loginBg.png";
+import darkLogo from "../../imgs/darkLogo.png";
+import loginBg from "../../imgs/loginBg.png";
 import OptionSection from "./OptionSection";
 import styles from "./LoginPage.module.css";
 import EmailHandler from "./EmailHandler"

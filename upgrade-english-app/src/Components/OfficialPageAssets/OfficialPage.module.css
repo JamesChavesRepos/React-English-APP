@@ -35,29 +35,40 @@ h5 {
   font-family: "Inika", serif;
   color: rgb(170, 170, 170);
 }
-button#generalLogoutBtn {
+button.generalLogoutBtn {
+  width: 7%;
+  height: 30px;
+  border-radius: 0 10px 10px 0;
   position: absolute;
-  bottom: 50%;
-  right: 0;
-  border: 2px solid #381B63;
+  bottom: 10%;
+  left: 0;
+  outline: none;
+  border: 1px solid lightgrey;
   color: #381B63;
+  background-color: white;
+  box-shadow: -1px 3px 2px 0px #dad1e2b2;
+  z-index: 10;
+  font-weight: bolder;
 }
 button:hover {
   border: 2px solid rgba(255, 255, 255, 0.788);
   color: rgba(255, 255, 255, 0.788);
-  background-color: #381B63;
+  background-color: #5b1fb4;
 }
 footer img#sLogo {
   width: 7vw;
   height: auto;
+ 
 }
 footer {
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  position: relative;
-  bottom: 0px;
+ 
+  position: absolute;
+  left: 10%;
+  bottom: -5%;
 }
 @keyframes spin {
   25% {

@@ -68,19 +68,21 @@ form input:focus {
 }
 form input[data-val="invalid"]{
   border: 2px solid red;
-  background-image: url('../imgs/invalid.svg') !important; 
+  background-image: url('../../imgs/invalid.svg') !important; 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
 }
 form input[data-val="valid"]{
   border: 2px solid green;
-  background-image: url('../imgs/valid.svg');
+  background-image: url('../../imgs/valid.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
 }
-
+img.sLogo{
+  margin-top: 2%;
+}
 @media screen and (max-width: 1000px) {
   
 }
@@ -90,4 +92,5 @@ form input[data-val="valid"]{
         z-index: 0;
       }
 }
+
 

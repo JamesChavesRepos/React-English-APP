@@ -19,8 +19,8 @@ export const auth = getAuth(app);
 
 // setter functionality below
 
+export const db = getDatabase();
 export function writeUserData(name, email, level, scores, imgUrl) {
-  const db = getDatabase();
   const reference = ref(db, "users/" + name);
   set(reference, {
     userName: name,

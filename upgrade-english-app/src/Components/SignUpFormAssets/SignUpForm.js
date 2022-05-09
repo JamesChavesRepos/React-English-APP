@@ -1,9 +1,9 @@
 import React from "react";
 
-import styles from "./signUpFornm.module.css";
-import formBg from "../imgs/formBg.svg";
-import lightLogo from "../imgs/lightLogo.svg";
-import DatePicker from "./DatePicker";
+import styles from "./signUpForm.module.css";
+import formBg from "../../imgs/formBg.svg";
+import lightLogo from "../../imgs/lightLogo.svg";
+import DatePicker from "./DatePicker.js";
 
 export const signUpForm = () => {
   let timeOut = null;
@@ -12,23 +12,24 @@ export const signUpForm = () => {
     pNumber: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
     email:
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-    // searchEmail: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
   };
+
   const dateValHandler = () => {
     console.log("date changed");
   };
-  const inputValHandler = ({target}) => {
+  
+  const inputValHandler = ({ target }) => {
     clearTimeout(timeOut);
     if (inputVal[target.name].test(target.value)) {
-        timeOut = setTimeout(function () {
-            console.log('Input Value: '+ target.value + " is valid");
-            target.dataset.val = "valid"
-        }, 500);
+      timeOut = setTimeout(function () {
+        console.log("Input Value: " + target.value + " is valid");
+        target.dataset.val = "valid";
+      }, 500);
     } else {
-        timeOut = setTimeout(function () {
-            console.log('Input Value: '+ target.value + " is  NOT valid");
-            target.dataset.val = "invalid"
-        }, 500);
+      timeOut = setTimeout(function () {
+        console.log("Input Value: " + target.value + " is  NOT valid");
+        target.dataset.val = "invalid";
+      }, 500);
     }
   };
 
@@ -46,7 +47,7 @@ export const signUpForm = () => {
         <label htmlFor="email">Email Address</label>
         <input name="email" onKeyUp={inputValHandler}></input>
         <label htmlFor="timeDate">Time & Date</label>
-        <DatePicker/>
+        <DatePicker />
         <button type="submit">Schedule Appointment</button>
       </form>
     </article>

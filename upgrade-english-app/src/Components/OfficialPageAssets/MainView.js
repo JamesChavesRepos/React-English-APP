@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 
 import styles from './MainView.module.css'
-import Dashboard from './Dashboard'
-import SignUpForm from './SignUpForm'
-import Admin from './Admin'
-import dashIcon from '../imgs/dashIcon.svg';
-import formIcon from '../imgs/formIcon.svg';
-import adminIcon from '../imgs/adminIcon.svg';
-import dashIconClicked from '../imgs/dashIconClicked.svg';
-import formIconClicked from '../imgs/formIconClicked.svg';
-import adminIconClicked from '../imgs/adminIconClicked.svg';
+import Dashboard from '../DashboardAssets/Dashboard'
+import SignUpForm from '../SignUpFormAssets/SignUpForm'
+import Admin from '../AdminAssets/Admin'
+import dashIcon from '../../imgs/dashIcon.svg';
+import formIcon from '../../imgs/formIcon.svg';
+import adminIcon from '../../imgs/adminIcon.svg';
+import dashIconClicked from '../../imgs/dashIconClicked.svg';
+import formIconClicked from '../../imgs/formIconClicked.svg';
+import adminIconClicked from '../../imgs/adminIconClicked.svg';
 function MainView() {
  
     const [view,setView] = useState('main');

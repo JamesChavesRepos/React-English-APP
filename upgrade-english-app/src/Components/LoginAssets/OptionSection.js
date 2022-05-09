@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import { useAuth } from "../context/auth-context";
-import emailIcon from "../imgs/email.png";
-import gmailIcon from "../imgs/google.svg";
-import facebookIcon from "../imgs/facebook.png";
-import twitterIcon from "../imgs/twitter.png";
+import { useAuth } from "../../context/auth-context";
+import emailIcon from "../../imgs/email.png";
+import gmailIcon from "../../imgs/google.svg";
+import facebookIcon from "../../imgs/facebook.png";
+import twitterIcon from "../../imgs/twitter.png";
 
 function OptionSection(props) {
 

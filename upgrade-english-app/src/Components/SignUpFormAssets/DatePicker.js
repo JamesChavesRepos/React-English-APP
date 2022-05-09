@@ -4,16 +4,16 @@ function datePicker() {
   console.log("date pikce");
   return (
     <div>
-      <div class="date-picker">
-        <div class="input">
-          <div class="result">
+      <div className="date-picker">
+        <div className="input">
+          <div className="result">
             Select Date: <span></span>
           </div>
           <button>
-            <i class="fa fa-calendar"></i>
+            <i className="fa fa-calendar"></i>
           </button>
         </div>
-        <div class="calendar"></div>
+        <div className="calendar"></div>
       </div>
     </div>
   );

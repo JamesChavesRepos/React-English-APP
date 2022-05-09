@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 
-import { useAuth } from "../context/auth-context";
+import { useAuth } from "../../context/auth-context";
 import styles from "./OfficialPage.module.css";
-import left from "../imgs/left.svg";
-import bottomLeft from "../imgs/bottomLeft.svg";
-import topRight from "../imgs/topRight.svg";
-import bottomRight from "../imgs/bottomRight.svg";
-import sincoLogo from "../imgs/logo-sinco.svg";
+import left from "../../imgs/left.svg";
+import bottomLeft from "../../imgs/bottomLeft.svg";
+import topRight from "../../imgs/topRight.svg";
+import bottomRight from "../../imgs/bottomRight.svg";
+import sincoLogo from "../../imgs/logo-sinco.svg";
 import MainView from "./MainView";
 
 function OfficialPage() {
@@ -28,7 +28,7 @@ function OfficialPage() {
         <img src={topRight} className={[styles.bgImg ,styles.topRight].join(" ")} />
         <img src={bottomRight} className={[styles.bgImg ,styles.bottomRight].join(" ")} />
         <MainView />
-        <button onClick={handleLogout}>Sign Out </button>
+        <button className={styles.generalLogoutBtn} onClick={handleLogout}>Sign Out</button>
         <footer>
           <h5>Powered By</h5>
           <img id="sLogo" src={sincoLogo} />{" "}

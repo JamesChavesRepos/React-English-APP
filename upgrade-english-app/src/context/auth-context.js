@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useEffect,
+  useContext,
+  useLayoutEffect,
+  useState,
+} from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -7,8 +13,8 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import { auth } from "../firebase";
-
+import { auth, db } from "../firebase";
+import { onValue, ref, set } from "firebase/database";
 export const authContext = createContext();
 
 export const useAuth = () => {
@@ -18,10 +24,25 @@ export const useAuth = () => {
 };
 
 export function AuthProvider({ children }) {
+  useLayoutEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      console.log("USER FOUND ! AUTH DATA RETREIVED : ", currentUser);
+      setUser(currentUser);
+      currentUser && setIsLoggedIn(true);
+      setLoading(false);
+    });
+  }, []);
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  // const [scores, setScores] = useState({});
+
+  // const [level, setLevel] = useState();
+
   const [user, setUser] = useState("");
-  console.log(user.displayName);
+
+  // let userDBData = {};
+
   const [loading, setLoading] = useState(true);
 
   const signUp = (email, password) =>
@@ -39,14 +60,7 @@ export function AuthProvider({ children }) {
     const googleProvider = new GoogleAuthProvider();
     signInWithPopup(auth, googleProvider);
   };
-  useEffect(() => {
-    onAuthStateChanged(auth, (currentUser) => {
-      console.log(currentUser.displayName);
-      setUser(currentUser);
-      currentUser && setIsLoggedIn(true);
-      setLoading(false);
-    });
-  }, []);
+  
 
   return (
     <authContext.Provider
@@ -58,6 +72,8 @@ export function AuthProvider({ children }) {
         loading,
         loginWithGoogle,
         isLoggedIn,
+        // scores,
+        // level
       }}
     >
       {children}
