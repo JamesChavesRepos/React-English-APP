@@ -1,7 +1,10 @@
 body {
     background-color: rgba(199, 199, 199, 0.829);
   }
-  
+  section.circularBarContainer{
+    display: flex;
+
+  }
 .skillContainer{
     position: relative;
     display: flex;
@@ -15,11 +18,9 @@ body {
     padding: 5px;
     border: 0.677414px solid #E5E5E5;
     box-shadow:1px 0.5px 5px 0.5px #b4b4b46c;
-
   }
   .skillContainer:hover{
     box-shadow:2px 1px 12px 1px #b4b4b4c4;
-
   }
   svg{
     z-index: 5;
@@ -34,11 +35,16 @@ body {
     right: 0;
     height: 60px;
     width: 10px;
-    background: green;
     box-shadow: 0px 2.709657907485962px 2.709657907485962px 0px #00000040 inset;
     border-radius: 20px 0 0 20px;
   }
   span.skill{
     font-size: 13px;
     text-align: center;
+  }
+  h6.skillDescription{
+    text-align: center;
+    color: #999999;
+    width: 100px;
+    font-size: 10px;
   }

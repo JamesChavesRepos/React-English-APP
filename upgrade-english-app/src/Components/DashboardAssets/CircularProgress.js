@@ -2,31 +2,50 @@ import { useEffect, useState } from "react";
 import styles from "./CircularProgress.module.css";
 
 export default function CircularProgress(props) {
-  let {percent,color,skill,year} = props.props
-  console.log(percent,color,skill,year)
-
   const [percentCounter, setPercentCounter] = useState(0);
+
+  let { percent, skill } = props;
+
+  let color = "#99999";
 
   useEffect(() => {
     let num = 0;
+
     let run = setInterval(() => {
       num++;
-      
-      if (num === ({percent} + 1)) {
+      if (num === percent + 1) {
         clearInterval(run);
       } else {
         setPercentCounter(num);
       }
     }, 20);
   }, []);
+  percent > 40 && console.log("not a beginner");
+  switch (percent) {
+    case percent > 20:
+      console.log(typeof percent);
+      console.log("rookie" + percent);
+    case percent > 40:
+      console.log(percent > 40);
+      console.log("beginer" + percent);
+    case percent > 60:
+      console.log(percent);
+      console.log("inter" + percent);
+    case percent > 60:
+      console.log(percent);
+      console.log("high" + percent);
+    default:
+      console.log("Advanced" + percent);
+  }
+
   const skillDescriptions = {
     comprehension:
       "comprehension this skill is evaluated by how much you are abke to comprehend of what is beiung said",
   };
   return (
-    <>
+    <div styles={{ display: "flex", flexDirection: "column" }}>
       <section className={styles.skillContainer}>
-        <h4 className={styles.percentage} style={{ color: {color} }}>
+        <h4 className={styles.percentage} style={{ color: color }}>
           {" "}
           {`${percentCounter}%`}{" "}
         </h4>
@@ -35,7 +54,7 @@ export default function CircularProgress(props) {
             style={{
               fill: "none",
               stroke: "rgba(221,221,221, 0.65)",
-              strokeDasharray: "251",
+              strokeDasharray: "201",
               strokeWidth: "5",
               cx: "35",
               cy: "35",
@@ -46,9 +65,9 @@ export default function CircularProgress(props) {
           <circle
             style={{
               fill: "none",
-              stroke: color,
-              strokeDasharray: "251",
-              strokeDashoffset: 250 - (250 * percentCounter) / 100,
+              stroke: "red",
+              strokeDasharray: "201",
+              strokeDashoffset: 200 - (200 * percentCounter) / 100,
               strokeWidth: "5",
               cx: "35",
               cy: "35",
@@ -57,10 +76,18 @@ export default function CircularProgress(props) {
             className={styles.outterCircle}
           ></circle>
         </svg>
-        <span className={styles.skill} style={{ color: color }}>{skill}</span>
-          <center className={styles.moreInfo}></center>
+        <span className={styles.skill} style={{ color: color }}>
+          {skill}
+        </span>
+        <center
+          className={styles.moreInfo}
+          style={{ backgroundColor : color }}
+        ></center>
       </section>
-    </>
+      <h6 className={styles.skillDescription}>
+        {skillDescriptions.comprehension}
+      </h6>
+    </div>
   );
 }
 
