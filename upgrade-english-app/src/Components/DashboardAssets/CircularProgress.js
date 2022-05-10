@@ -6,11 +6,26 @@ export default function CircularProgress(props) {
 
   let { percent, skill } = props;
 
-  let color = "#99999";
+  let color = 0;
+console.log(percent,percent > 80)
+
+  if ((percent < 0 )&& (percent > 20)) {
+    color = "#83CC01";
+  } else if ((percent < 20) && (percent > 40)) {
+    color = "#CCFF00";
+  } else if ((percent < 40) && (percent > 60)) {
+    color = "#FAFF00";
+    console.log(percent, color,(percent < 40) && (percent > 60));
+  } else if ((percent < 60) && (percent > 80)) {
+    color = "#FFB800";
+  } else {
+    color = "#FFB800";
+  }
+
+  
 
   useEffect(() => {
     let num = 0;
-
     let run = setInterval(() => {
       num++;
       if (num === percent + 1) {
@@ -20,34 +35,18 @@ export default function CircularProgress(props) {
       }
     }, 20);
   }, []);
-  percent > 40 && console.log("not a beginner");
-  switch (percent) {
-    case percent > 20:
-      console.log(typeof percent);
-      console.log("rookie" + percent);
-    case percent > 40:
-      console.log(percent > 40);
-      console.log("beginer" + percent);
-    case percent > 60:
-      console.log(percent);
-      console.log("inter" + percent);
-    case percent > 60:
-      console.log(percent);
-      console.log("high" + percent);
-    default:
-      console.log("Advanced" + percent);
-  }
 
   const skillDescriptions = {
     comprehension:
       "comprehension this skill is evaluated by how much you are abke to comprehend of what is beiung said",
   };
+  console.log(color)
   return (
     <div styles={{ display: "flex", flexDirection: "column" }}>
       <section className={styles.skillContainer}>
         <h4 className={styles.percentage} style={{ color: color }}>
-          {" "}
-          {`${percentCounter}%`}{" "}
+          
+          {`${percentCounter}%`}
         </h4>
         <svg style={{ width: "70px", height: "70px" }}>
           <circle
@@ -65,7 +64,7 @@ export default function CircularProgress(props) {
           <circle
             style={{
               fill: "none",
-              stroke: "red",
+              stroke: color,
               strokeDasharray: "201",
               strokeDashoffset: 200 - (200 * percentCounter) / 100,
               strokeWidth: "5",
@@ -81,7 +80,7 @@ export default function CircularProgress(props) {
         </span>
         <center
           className={styles.moreInfo}
-          style={{ backgroundColor : color }}
+          style={{ backgroundColor: color }}
         ></center>
       </section>
       <h6 className={styles.skillDescription}>

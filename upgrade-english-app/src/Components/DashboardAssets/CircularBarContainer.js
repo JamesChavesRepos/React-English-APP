@@ -5,7 +5,6 @@ import { useAuth } from "../../context/auth-context";
 import styles from './CircularProgress.module.css'
 
 function CircularBarContainer(props) {
-  console.log(props.scores);
   const { user } = useAuth();
   let scoresArr = Object.values(props.scores);
   let lastScores = scoresArr[scoresArr.length - 1]
