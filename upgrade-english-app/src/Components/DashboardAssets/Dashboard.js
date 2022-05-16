@@ -6,8 +6,14 @@ import { useAuth } from "../../context/auth-context";
 import loading from "../../imgs/loading.png";
 import skillInfoGraph from "../../imgs/skillInfoGraph.svg";
 import styles from "./Dashboard.module.css";
-import CircularBarContainer from "./CircularBarContainer";
+
+import SkillCircularBarContainer from "./SkillCircularBarContainer";
 import UserBanner from "./UserBanner";
+import SkillPieChart from "./SkillPieChart";
+import SkillDonutChart from "./SkillDonutChart";
+import SkillCompareBar from "./SkillCompareBar";
+import SkillsStackedBar from "./SkillsStackedBar";
+import SkillsLineChart from "./SkillsLineChart";
 
 function Dashboard() {
   const { user } = useAuth();
@@ -36,21 +42,30 @@ function Dashboard() {
       <h1 className={styles.flex}>
         <img src={loading} />
       </h1>
-      // console.log("internet error")
-      // error boundary alternative
     );
   return (
     <main className={styles.dashBoardContainer}>
       <header className={styles.dashHeader}>
         <img className={styles.infoGraph} src={skillInfoGraph} />
-        <UserBanner/>
+        <UserBanner />
       </header>
-        <h4>Personal Stats</h4>
+      <h4>Personal Stats</h4>
       <section className={styles.personalStats}>
-        <CircularBarContainer scores={scores}/>
+        <SkillPieChart />
+        <SkillCircularBarContainer scores={scores} />
+        <SkillDonutChart />
       </section>
-        <h4>Company Stats</h4>
-      <section className={styles.companyStats}>
+      <section className={styles.personalStats2}>
+        <SkillCompareBar />
+        <SkillsStackedBar />
+        <SkillsLineChart />
+      </section>
+      <h4>Company Stats</h4>
+      <section className={styles.personalStats2}>
+        <SkillsStackedBar />
+        <SkillsLineChart />
+        <SkillsStackedBar />
+        <SkillsLineChart />
       </section>
     </main>
   );

@@ -39,6 +39,16 @@ console.log(percent,percent > 80)
   const skillDescriptions = {
     comprehension:
       "comprehension this skill is evaluated by how much you are abke to comprehend of what is beiung said",
+      fluency:
+      "fluency this skill is evaluated by how much you are abke to comprehend of what is beiung said",
+      pronunciation:
+      "pronunciation this skill is evaluated by how much you are abke to comprehend of what is beiung said",
+      monoLing:
+      "mono this skill is evaluated by how much you are abke to comprehend of what is beiung said",
+      sentenceStructure:
+      "comprehension this skill is evaluated by how much you are abke to comprehend of what is beiung said",
+      overAllEnglish:
+      "over all this skill is evaluated by how much you are abke to comprehend of what is beiung said",
   };
   console.log(color)
   return (
@@ -84,7 +94,7 @@ console.log(percent,percent > 80)
         ></center>
       </section>
       <h6 className={styles.skillDescription}>
-        {skillDescriptions.comprehension}
+        {skillDescriptions[skill]}
       </h6>
     </div>
   );

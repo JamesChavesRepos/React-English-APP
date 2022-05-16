@@ -22,7 +22,7 @@ main.dashBoardContainer {
   z-index: 2;
   background-color: white;
   height: max-content;
-  width: 1000px;
+  width: 100%;
   border-radius: 10px;
   position: relative;
   top: 10px;
@@ -78,7 +78,7 @@ aside.left div {
   align-items: center;
   bottom: 0;
 }
-aside.left div small{
+aside.left div small {
   font-size: 10px;
   color: #b4b4b4;
 }
@@ -118,6 +118,45 @@ h2.timeNdate {
   letter-spacing: 0.15em;
   text-align: center;
   color: #b4b4b4;
+}
+section.personalStats {
+  margin: 20px 0 20px 0;
+  position: relative;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+section.personalStats article canvas{
+  height: 200px !important;
+  width: 200px !important;
+}
+section.personalStats article.donut{
+  position: absolute !important; 
+  right: 11%;
+}
+section.personalStats article.pie{
+  position: absolute !important; 
+  left: 11%;
+}
+a.canvasjs-chart-credit{
+  display: none !important;
+}
+section.personalStats2 {
+  display: flex;
+  margin: 20px 0 20px 0;
+  position: relative;
+  height: 200px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+section.personalStats2 article{
+height: 200px !important;
+width: 30% !important;
+}
+section.personalStats2 article canvas{
+height: 200px !important;
+width: 180% !important;
+position: relative !important;
 }
 @media screen and (min-width: 1110px) {
   main.dashBoardContainer {

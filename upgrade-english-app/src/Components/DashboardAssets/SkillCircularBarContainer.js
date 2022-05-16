@@ -12,7 +12,7 @@ function CircularBarContainer(props) {
 
   return (
     <>
-    { Object.entries(lastScores).map(([key, value], index) => <CircularProgress key={index} percent={value} skill={key}/>) }
+    { Object.entries(lastScores).map(([key, value], index) => key != "overAllEnglish" && <CircularProgress key={index} percent={value} skill={key}/>) }
     </>
   );
 }
