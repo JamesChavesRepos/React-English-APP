@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CanvasJSReact from "./canvasjs.stock.react";
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
  

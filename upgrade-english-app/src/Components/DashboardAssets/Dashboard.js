@@ -14,6 +14,7 @@ import SkillDonutChart from "./SkillDonutChart";
 import SkillCompareBar from "./SkillCompareBar";
 import SkillsStackedBar from "./SkillsStackedBar";
 import SkillsLineChart from "./SkillsLineChart";
+import SkillHighScore from "./SkillHighScore";
 
 function Dashboard() {
   const { user } = useAuth();
@@ -62,8 +63,7 @@ function Dashboard() {
       </section>
       <h4>Company Stats</h4>
       <section className={styles.personalStats2}>
-        <SkillsStackedBar />
-        <SkillsLineChart />
+        <SkillHighScore />
         <SkillsStackedBar />
         <SkillsLineChart />
       </section>

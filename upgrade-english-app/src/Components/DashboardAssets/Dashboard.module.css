@@ -126,6 +126,9 @@ section.personalStats {
   justify-content: center;
   align-items: center;
 }
+section article div{
+  
+}
 section.personalStats article canvas{
   height: 200px !important;
   width: 200px !important;
