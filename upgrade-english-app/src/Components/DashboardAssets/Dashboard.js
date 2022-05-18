@@ -15,6 +15,9 @@ import SkillCompareBar from "./SkillCompareBar";
 import SkillsStackedBar from "./SkillsStackedBar";
 import SkillsLineChart from "./SkillsLineChart";
 import SkillHighScore from "./SkillHighScore";
+import SkillsPyramidChart from "./SkillsPyramidChart"
+import SkillsBubbleChart from "./SkillsBubbleChart";
+import SkillCommonErrors from "./SkillCommonErrors";
 
 function Dashboard() {
   const { user } = useAuth();
@@ -64,8 +67,9 @@ function Dashboard() {
       <h4>Company Stats</h4>
       <section className={styles.personalStats2}>
         <SkillHighScore />
-        <SkillsStackedBar />
-        <SkillsLineChart />
+        <SkillCommonErrors/>
+        <SkillsPyramidChart />
+        <SkillsBubbleChart />
       </section>
     </main>
   );
