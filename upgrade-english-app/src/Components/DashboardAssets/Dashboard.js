@@ -7,17 +7,17 @@ import loading from "../../imgs/loading.png";
 import skillInfoGraph from "../../imgs/skillInfoGraph.svg";
 import styles from "./Dashboard.module.css";
 
-import SkillCircularBarContainer from "./SkillCircularBarContainer";
-import UserBanner from "./UserBanner";
-import SkillPieChart from "./SkillPieChart";
-import SkillDonutChart from "./SkillDonutChart";
-import SkillCompareBar from "./SkillCompareBar";
-import SkillsStackedBar from "./SkillsStackedBar";
-import SkillsLineChart from "./SkillsLineChart";
-import SkillHighScore from "./SkillHighScore";
-import SkillsPyramidChart from "./SkillsPyramidChart"
-import SkillsBubbleChart from "./SkillsBubbleChart";
-import SkillCommonErrors from "./SkillCommonErrors";
+import SkillCircularBarContainer from "./SkillsChartComponents/SkillCircularBarContainer";
+import UserBanner from "./UserBannerComponents/UserBanner";
+import SkillPieChart from "./SkillsChartComponents/SkillPieChart";
+import SkillDonutChart from "./SkillsChartComponents/SkillDonutChart";
+import SkillCompareBar from "./SkillsChartComponents/SkillCompareBar";
+import SkillsStackedBar from "./SkillsChartComponents/SkillsStackedBar";
+import SkillsLineChart from "./SkillsChartComponents/SkillsLineChart";
+import SkillHighScore from "./SkillsChartComponents/SkillHighScore";
+import SkillsPyramidChart from "./SkillsChartComponents/SkillsPyramidChart"
+import SkillsBubbleChart from "./SkillsChartComponents/SkillsBubbleChart";
+import SkillCommonErrors from "./SkillsChartComponents/SkillCommonErrors";
 
 function Dashboard() {
   const { user } = useAuth();

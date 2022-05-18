@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import CircularProgress from "./CircularProgress";
-import { useAuth } from "../../context/auth-context";
+import { useAuth } from "../../../context/auth-context";
 import styles from './CircularProgress.module.css'
 
 function CircularBarContainer(props) {

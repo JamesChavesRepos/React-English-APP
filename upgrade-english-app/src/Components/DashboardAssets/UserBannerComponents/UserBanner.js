@@ -1,12 +1,12 @@
 import React from "react";
 
-import advanced from "../../imgs/advancedBadge.svg";
-import highLevel from "../../imgs/highLevelBadge.svg";
-import intermediate from "../../imgs/intermediateBadge.svg";
-import beginner from "../../imgs/beginnerBadge.svg";
-import rookie from "../../imgs/rookieBadge.svg";
-import calendar from "../../imgs/calendar.svg";
-import styles from "./Dashboard.module.css";
+import advanced from "../../../imgs/advancedBadge.svg";
+import highLevel from "../../../imgs/highLevelBadge.svg";
+import intermediate from "../../../imgs/intermediateBadge.svg";
+import beginner from "../../../imgs/beginnerBadge.svg";
+import rookie from "../../../imgs/rookieBadge.svg";
+import calendar from "../../../imgs/calendar.svg";
+import styles from "../Dashboard.module.css";
 
 function UserBanner() {
   const levelBadges = {

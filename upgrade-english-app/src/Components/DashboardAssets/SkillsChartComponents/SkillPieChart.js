@@ -1,5 +1,5 @@
 import CanvasJSReact from "./canvasjs.stock.react";
-import styles from "./Dashboard.module.css";
+import styles from "../Dashboard.module.css";
 let CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 const SkillPieChart = (skillArray) => {
