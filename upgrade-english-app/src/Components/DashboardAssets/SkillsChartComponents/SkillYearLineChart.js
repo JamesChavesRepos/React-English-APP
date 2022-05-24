@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import CanvasJSReact from "./canvasjs.stock.react";
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-const BarChart = (props) => {
+const SkillYearLineChart = (props) => {
   const defaultData = [
     { Comprehension: 0 },
     { Fluency: 0 },
@@ -18,51 +18,47 @@ const BarChart = (props) => {
   let scoreEntries2;
   let year1 = Object.entries(props.scores)[0][0];
   let year2;
-
+  
   scoresArr[1] != null
-    ? (scoreEntries2 = Object.entries(scoresArr[1]))
-    : (scoreEntries2 = defaultData);
-
+  ? (scoreEntries2 = Object.entries(scoresArr[1]))
+  : (scoreEntries2 = defaultData);
   scoresArr[1] != null
-    ? (year2 = Object.entries(props.scores)[1][0])
-    : (scoreEntries2 = defaultData);
-    
+  ? (year2 = Object.entries(props.scores)[1][0])
+  : (scoreEntries2 = defaultData);
+  
   let scoresArrayYear1 = Object.values(scoreEntries1).map((skill) => {
     return { label: `${skill[0]}`, y: parseInt(skill[1]) };
   });
-
   let scoresArrayYear2 = Object.values(scoreEntries2).map((skill) => {
     return { label: `${skill[0]}`, y: parseInt(skill[1]) };
   });
-
+  
 
   const options = {
     animationEnabled: true,
-    theme: "light2",
     title: {
       text: `${year1} vs ${year2}`,
     },
-    axisX: {
-      title: "skills",
-      reversed: true,
-    },
     axisY: {
-      title: "scores",
-      //   labelFormatter: this.addSymbols,
+      title: "S C O R E",
+      includeZero: false,
+    },
+    toolTip: {
+      shared: true,
     },
     data: [
       {
-        type: "bar",
-        showInLegend: true,
+        type: "line",
         name: `${year1}`,
-        color: "gold",
+        color: "blue",
+        showInLegend: true,
         dataPoints: scoresArrayYear1,
       },
       {
-        type: "bar",
-        showInLegend: true,
+        type: "line",
         name: `${year2}`,
-        color: "blue",
+        color: "gold",
+        showInLegend: true,
         dataPoints: scoresArrayYear2,
       },
     ],
@@ -75,4 +71,4 @@ const BarChart = (props) => {
   );
 };
 
-export default BarChart;
+export default SkillYearLineChart;

@@ -3,7 +3,14 @@ import CanvasJSReact from './canvasjs.stock.react';
 import styles from '../Dashboard.module.css'
 
 let CanvasJSChart = CanvasJSReact.CanvasJSChart;
-function SkillDonutChart() {
+
+function SkillDonutChart(props) {
+  let scoresArr = Object.values(props.scores);
+  let lastScoreEntries = Object.entries(scoresArr[scoresArr.length - 1]);
+  let mappedScoresArray = Object.values(lastScoreEntries).map((skill) => {
+    return { label: `${skill[0]}`, y: skill[1] };
+  });
+
     const options = {
       animationEnabled: true,
       title: {
@@ -24,11 +31,7 @@ function SkillDonutChart() {
           indexLabel: "{name}: {y}",
           yValueFormatString: "#,###'%'",
           dataPoints: [
-            { name: "Comprehesion", y: 5 },
-            { name: "Fluency", y: 31 },
-            { name: "Sentence Structure", y: 40 },
-            { name: "Pronunciation", y: 17 },
-            { name: "mono-lingualism", y: 7 },
+            ...mappedScoresArray
           ],
         },
       ],

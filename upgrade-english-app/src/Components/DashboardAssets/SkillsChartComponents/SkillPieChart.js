@@ -2,14 +2,13 @@ import CanvasJSReact from "./canvasjs.stock.react";
 import styles from "../Dashboard.module.css";
 let CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-const SkillPieChart = (skillArray) => {
-  skillArray = [
-    { y: 45, label: "comprehension" },
-    { y: 49, label: "fluency" },
-    { y: 69, label: "pronunciation" },
-    { y: 75, label: "sentence structure" },
-    { y: 89, label: "monolingualism" },
-  ];
+const SkillPieChart = (props) => {
+  let scoresArr = Object.values(props.scores);
+  let lastScoreEntries = Object.entries(scoresArr[scoresArr.length - 1]);
+  let mappedScoresArray = Object.values(lastScoreEntries).map((skill) => {
+    return { label: `${skill[0]}`, y: skill[1] };
+  });
+
   const options = {
     responsive: false,
     animationEnabled: true,
@@ -26,7 +25,9 @@ const SkillPieChart = (skillArray) => {
         toolTipContent: "{label}: <strong>{y}%</strong>",
         indexLabel: "{y}%",
         indexLabelPlacement: "inside",
-        dataPoints: [...skillArray],
+        dataPoints: [
+          ...mappedScoresArray
+        ],
         // fontSize: 24
       },
     ],
@@ -34,11 +35,7 @@ const SkillPieChart = (skillArray) => {
 
   return (
     <article className={styles.pie}>
-      <CanvasJSChart
-        options={options}
-        /* onRef={ref => this.chart = ref} */
-      />
-      {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+      <CanvasJSChart options={options} />
     </article>
   );
 };

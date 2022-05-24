@@ -26,7 +26,7 @@ export const useAuth = () => {
 export function AuthProvider({ children }) {
   useLayoutEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
-      console.log("USER FOUND ! AUTH DATA RETREIVED : ", currentUser);
+      console.log("USER FOUND ! AUTH DATA RETREIVED : ", currentUser.displayName);
       setUser(currentUser);
       currentUser && setIsLoggedIn(true);
       setLoading(false);

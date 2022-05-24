@@ -7,7 +7,7 @@ export default function CircularProgress(props) {
   let { percent, skill } = props;
 
   let color = 0;
-console.log(percent,percent > 80)
+// console.log(percent,percent > 80)
 
   if ((percent < 0 )&& (percent > 20)) {
     color = "#83CC01";
@@ -50,7 +50,7 @@ console.log(percent,percent > 80)
       overAllEnglish:
       "over all this skill is evaluated by how much you are abke to comprehend of what is beiung said",
   };
-  console.log(color)
+  // console.log(color)
   return (
     <div styles={{ display: "flex", flexDirection: "column" }}>
       <section className={styles.skillContainer}>

@@ -13,7 +13,7 @@ import SkillPieChart from "./SkillsChartComponents/SkillPieChart";
 import SkillDonutChart from "./SkillsChartComponents/SkillDonutChart";
 import SkillCompareBar from "./SkillsChartComponents/SkillCompareBar";
 import SkillsStackedBar from "./SkillsChartComponents/SkillsStackedBar";
-import SkillsLineChart from "./SkillsChartComponents/SkillsLineChart";
+import SkillYearLineChart from "./SkillsChartComponents/SkillYearLineChart";
 import SkillHighScore from "./SkillsChartComponents/SkillHighScore";
 import SkillsPyramidChart from "./SkillsChartComponents/SkillsPyramidChart"
 import SkillsBubbleChart from "./SkillsChartComponents/SkillsBubbleChart";
@@ -26,16 +26,16 @@ function Dashboard() {
   let userData = {};
 
   useEffect(() => {
-    const allData = ref(db, "users/" + user.displayName);
+    const allData = ref(db, "users/" + "Felipe Diaz"); // user.displayName
     onValue(allData, (snapshot) => {
       setScores(() => {
         userData = snapshot.val();
-        // console.log("USER SCORES: ", userData["scores"]);
+        console.log("USER SCORES: ", userData["scores"]);
         return userData["scores"];
       });
       setLevel(() => {
         userData = snapshot.val();
-        // console.log("USER LEVEL : ", userData["level"]);
+        console.log("USER LEVEL : ", userData["level"]);
         return userData["level"];
       });
     });
@@ -55,21 +55,21 @@ function Dashboard() {
       </header>
       <h4>Personal Stats</h4>
       <section className={styles.personalStats}>
-        <SkillPieChart />
+        <SkillPieChart scores={scores}/>
         <SkillCircularBarContainer scores={scores} />
-        <SkillDonutChart />
+        <SkillDonutChart scores={scores}/>
       </section>
       <section className={styles.personalStats2}>
-        <SkillCompareBar />
-        <SkillsStackedBar />
-        <SkillsLineChart />
+        <SkillCompareBar scores={scores}/>
+        <SkillsStackedBar scores={scores}/>
+        <SkillYearLineChart scores={scores}/>
       </section>
       <h4>Company Stats</h4>
       <section className={styles.personalStats2}>
-        <SkillHighScore />
-        <SkillCommonErrors/>
-        <SkillsPyramidChart />
-        <SkillsBubbleChart />
+        <SkillHighScore scores={scores}/>
+        <SkillCommonErrors scores={scores}/>
+        <SkillsPyramidChart scores={scores}/>
+        <SkillsBubbleChart scores={scores}/>
       </section>
     </main>
   );
