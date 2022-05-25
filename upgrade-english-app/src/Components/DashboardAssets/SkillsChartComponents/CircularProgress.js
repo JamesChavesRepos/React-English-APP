@@ -7,22 +7,20 @@ export default function CircularProgress(props) {
   let { percent, skill } = props;
 
   let color = 0;
-// console.log(percent,percent > 80)
+  // console.log(percent,percent > 80)
 
-  if ((percent < 0 )&& (percent > 20)) {
+  if (percent < 0 && percent > 20) {
     color = "#83CC01";
-  } else if ((percent < 20) && (percent > 40)) {
+  } else if (percent < 20 && percent > 40) {
     color = "#CCFF00";
-  } else if ((percent < 40) && (percent > 60)) {
+  } else if (percent < 40 && percent > 60) {
     color = "#FAFF00";
-    console.log(percent, color,(percent < 40) && (percent > 60));
-  } else if ((percent < 60) && (percent > 80)) {
+    console.log(percent, color, percent < 40 && percent > 60);
+  } else if (percent < 60 && percent > 80) {
     color = "#FFB800";
   } else {
     color = "#FFB800";
   }
-
-  
 
   useEffect(() => {
     let num = 0;
@@ -37,25 +35,24 @@ export default function CircularProgress(props) {
   }, []);
 
   const skillDescriptions = {
-    comprehension:
-      "comprehension this skill is evaluated by how much you are abke to comprehend of what is beiung said",
-      fluency:
-      "fluency this skill is evaluated by how much you are abke to comprehend of what is beiung said",
-      pronunciation:
-      "pronunciation this skill is evaluated by how much you are abke to comprehend of what is beiung said",
-      monoLing:
-      "mono this skill is evaluated by how much you are abke to comprehend of what is beiung said",
-      sentenceStructure:
-      "comprehension this skill is evaluated by how much you are abke to comprehend of what is beiung said",
-      overAllEnglish:
-      "over all this skill is evaluated by how much you are abke to comprehend of what is beiung said",
+    Comprehension:
+      "This skill is evaluated by how much you are able to comprehend of what is being said and in what context",
+    Fluency:
+      "This skill is evaluated by how much you are able to communicate and be understood in your own words",
+    Pronunciation:
+      "This skill is evaluated by how well you are pronouncing the words and using them correctly",
+    Monolingualism:
+      "This skill is evaluated by your ability to not mix spanish into what you say in English",
+    "Sentence Structure":
+      "This skill is evaluated by the way you are structuring a sentence and how well-spoken and clear you sound regardless of accent",
+    overAllEnglish:
+      "This is your General English Level ,this takes into account all the categories",
   };
-  // console.log(color)
+  let desc = skillDescriptions[skill];
   return (
     <div styles={{ display: "flex", flexDirection: "column" }}>
       <section className={styles.skillContainer}>
         <h4 className={styles.percentage} style={{ color: color }}>
-          
           {`${percentCounter}%`}
         </h4>
         <svg style={{ width: "70px", height: "70px" }}>
@@ -93,9 +90,7 @@ export default function CircularProgress(props) {
           style={{ backgroundColor: color }}
         ></center>
       </section>
-      <h6 className={styles.skillDescription}>
-        {skillDescriptions[skill]}
-      </h6>
+      <h6 className={styles.skillDescription}>{desc}</h6>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./signUpForm.module.css";
 import formBg from "../../imgs/formBg.svg";
 import lightLogo from "../../imgs/lightLogo.svg";
-import DatePicker from "./DatePicker.js";
+import DateTimePickers from './DateTimePickers'
 
 export const signUpForm = () => {
   let timeOut = null;
@@ -47,7 +47,7 @@ export const signUpForm = () => {
         <label htmlFor="email">Email Address</label>
         <input name="email" onKeyUp={inputValHandler}></input>
         <label htmlFor="timeDate">Time & Date</label>
-        <DatePicker />
+        <DateTimePickers/>
         <button type="submit">Schedule Appointment</button>
       </form>
     </article>

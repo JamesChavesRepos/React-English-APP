@@ -6,13 +6,13 @@ const CorrectInCorrectStackBar = (props) => {
   let scoresArr = Object.values(props.scores);
   let lastScoreEntries = Object.entries(scoresArr[scoresArr.length - 1]);
   let mappedScoresArray = Object.values(lastScoreEntries).map((skill) => {
-    return { label: `${skill[0]}`, y: skill[1] };
+    return { label: `${skill[0]}`, y: parseInt(skill[1]) };
   });
   let mappedErrorsArray = Object.values(lastScoreEntries).map((skill) => {
 	let inverse = (100-parseInt(skill[1]))
   return { label: `${skill[0]}`, y: inverse  };
 });
-  console.log(mappedScoresArray,mappedErrorsArray,lastScoreEntries)
+  console.log(mappedScoresArray)
   const options = {
     title: {
       text: "Correct VS Incorrect",
@@ -33,7 +33,7 @@ const CorrectInCorrectStackBar = (props) => {
         indexLabel: "{y}",
         indexLabelFontColor: "white",
         yValueFormatString: "#,###'%'",
-        dataPoints: mappedScoresArray,
+        dataPoints: mappedScoresArray
       },
       {
         type: "stackedBar100",
