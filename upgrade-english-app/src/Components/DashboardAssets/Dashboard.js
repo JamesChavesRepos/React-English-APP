@@ -15,7 +15,7 @@ import SkillCompareBar from "./SkillsChartComponents/SkillCompareBar";
 import SkillsStackedBar from "./SkillsChartComponents/SkillsStackedBar";
 import SkillYearLineChart from "./SkillsChartComponents/SkillYearLineChart";
 import SkillHighScore from "./SkillsChartComponents/SkillHighScore";
-import SkillsPyramidChart from "./SkillsChartComponents/SkillsPyramidChart"
+import SkillsPyramidChart from "./SkillsChartComponents/SkillsPyramidChart";
 import SkillsBubbleChart from "./SkillsChartComponents/SkillsBubbleChart";
 import SkillCommonErrors from "./SkillsChartComponents/SkillCommonErrors";
 
@@ -24,20 +24,24 @@ function Dashboard() {
   const [scores, setScores] = useState({});
   const [level, setLevel] = useState();
   let userData = {};
+  console.log(db)
+  const refs = ref(db, "userssss/Carlos Diaz/scores/2020" )
+  console.log(refs)
 
   useEffect(() => {
-    const allData = ref(db, "users/" + "Felipe Diaz"); // user.displayName
-    onValue(allData, (snapshot) => {
-      setScores(() => {
-        userData = snapshot.val();
-        console.log("USER SCORES: ", userData["scores"]);
-        return userData["scores"];
-      });
-      setLevel(() => {
-        userData = snapshot.val();
-        console.log("USER LEVEL : ", userData["level"]);
-        return userData["level"];
-      });
+    onValue(ref(db, "users/" + "Carlos Diaz"), (snapshot) => {
+      console.log(db, snapshot, userData);
+      userData = snapshot.val();
+      if (userData != null) {
+        setScores(() => {
+          console.log("USER SCORES: ", userData["scores"]);
+          return userData["scores"];
+        });
+        setLevel(() => {
+          console.log("USER LEVEL : ", userData["level"]);
+          return userData["level"];
+        });
+      }
     });
   }, []);
 
@@ -47,6 +51,7 @@ function Dashboard() {
         <img src={loading} />
       </h1>
     );
+
   return (
     <main className={styles.dashBoardContainer}>
       <header className={styles.dashHeader}>
@@ -55,21 +60,21 @@ function Dashboard() {
       </header>
       <h4>Personal Stats</h4>
       <section className={styles.personalStats}>
-        <SkillPieChart scores={scores}/>
+        <SkillPieChart scores={scores} />
         <SkillCircularBarContainer scores={scores} />
-        <SkillDonutChart scores={scores}/>
+        <SkillDonutChart scores={scores} />
       </section>
       <section className={styles.personalStats2}>
-        <SkillCompareBar scores={scores}/>
-        <SkillsStackedBar scores={scores}/>
-        <SkillYearLineChart scores={scores}/>
+        <SkillCompareBar scores={scores} />
+        <SkillsStackedBar scores={scores} />
+        <SkillYearLineChart scores={scores} />
       </section>
       <h4>Company Stats</h4>
       <section className={styles.personalStats2}>
-        <SkillHighScore scores={scores}/>
-        <SkillCommonErrors scores={scores}/>
-        <SkillsPyramidChart scores={scores}/>
-        <SkillsBubbleChart scores={scores}/>
+        <SkillHighScore scores={scores} />
+        <SkillCommonErrors scores={scores} />
+        <SkillsPyramidChart scores={scores} />
+        <SkillsBubbleChart scores={scores} />
       </section>
     </main>
   );

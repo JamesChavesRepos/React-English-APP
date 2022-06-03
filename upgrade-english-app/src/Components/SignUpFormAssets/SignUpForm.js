@@ -47,7 +47,9 @@ export const signUpForm = () => {
         <label htmlFor="email">Email Address</label>
         <input name="email" onKeyUp={inputValHandler}></input>
         <label htmlFor="timeDate">Time & Date</label>
-        <DateTimePickers/>
+        <br/>
+        <DateTimePickers className={styles.dtPicker} />
+        <br/>
         <button type="submit">Schedule Appointment</button>
       </form>
     </article>

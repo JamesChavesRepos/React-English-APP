@@ -15,7 +15,7 @@ article {
 article div {
   border-radius: 10px;
   display: flex;
-  flex-direction: column;
+  border: none;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -50,7 +50,7 @@ form label {
   font-size: 15px;
   color: white;
 }
-form input {
+form input { 
   margin: 5px 0 7px 0;
   width: 60%;
   border-radius: 3px;
@@ -60,6 +60,12 @@ form input {
   color: #082564;
   font-weight: bold;
   background-color: white;
+}
+input:focus{
+  border: 2px solid white;
+  background-color: none;
+  background: transparent;
+  color: black;
 }
 form input:focus {
   background: linear-gradient(rgb(0, 0, 156), rgb(44, 4, 226)) center bottom 2px /
@@ -82,6 +88,18 @@ form input[data-val="valid"]{
 }
 img.sLogo{
   margin-top: 2%;
+}
+
+button{
+  height: 7%;
+  width: 30%;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #4b1aa7;
+  color: #4b1aa7;
+}
+button:hover{
+  background-color: #9365e9af;
 }
 @media screen and (max-width: 1000px) {
   

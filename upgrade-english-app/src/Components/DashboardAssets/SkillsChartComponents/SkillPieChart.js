@@ -3,6 +3,7 @@ import styles from "../Dashboard.module.css";
 let CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 const SkillPieChart = (props) => {
+  console.log(props.scores)
   let scoresArr = Object.values(props.scores);
   let lastScoreEntries = Object.entries(scoresArr[scoresArr.length - 1]);
   let mappedScoresArray = Object.values(lastScoreEntries).map((skill) => {
